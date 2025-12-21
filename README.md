@@ -1,0 +1,20 @@
+# 🚀 My Frontend Journey
+
+Welcome to my Frontend learning journey!  
+Here I track everything I learn — from the basics to advanced concepts.  
+I update this README as I make progress.  
+
+---
+## 📈 Progress Js
+- [x] 🧩 Variables  
+- [x] 🔢 Data Types  
+- [x] ➕ Operators  
+- [ ] 🧮 Arrays  
+- [x] 🔁 Loops  
+- [x] 🧱 Objects  
+- [x] ⚙️ Functions  
+- [ ] 🧬 Prototypes  
+- [ ] 🏗️ Classes  
+- [ ] ⏳ Promises  
+- [ ] ❌ Error Handling  
+- [ ] 📦 Modules
