@@ -31,7 +31,7 @@ console.log(--num);       // 3
 
 // -- Assignment operators --
 
-// 1. Basic assingmnet:
+// 1. Basic assingnmet:
 // operator =
 let fruit = "apple";
 // Assigns the value on the right to the variable on the left.
@@ -40,11 +40,11 @@ let fruit = "apple";
 // Combines arithmetic operations with assignment.
 // operator      example     equivalent to
 // +=            num+=1      num=num+1
-// -=            num+=1      num=num-1
-// *=            num+=1      num=num*1
-// /=            num+=1      num=num/1
-// %=            num+=1      num=num%1
-// **=           num+=1      num=num**1
+// -=            num-=1      num=num-1
+// *=            num*=1      num=num*1
+// /=            num/=1      num=num/1
+// %=            num%=1      num=num%1
+// **=           num**=1      num=num**1
 
 
 
@@ -89,8 +89,8 @@ function hi(msg){
     console.log("HI "+msg);
 };
 
-false && hi("false &&");      // hi will not be runned
-true && hi("true &&");       // hi will be runned
+false && hi("false &&");      // hi will not be run
+true && hi("true &&");       // hi will be run
 
 
 //  || (or) -> returns true if only one of them is true.
@@ -102,8 +102,8 @@ console.log(true || true);       //  true
 // short circuit behavior
 // if first one is true, Js does not care about second one.
 
-true || hi("true ||");         // hi will not be runned
-false || hi("false ||");       // hi will be runned
+true || hi("true ||");         // hi will not be run
+false || hi("false ||");       // hi will be run
 
 //  ! (not) -> true is false, false it true.
 console.log(!true);     // false
