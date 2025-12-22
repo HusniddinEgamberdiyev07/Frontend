@@ -1,110 +1,138 @@
-// Terms:
-// operand - is what operators applied to. 5 + 2. 5 and 2 are operands.
-// unary - operator has a single operand. -1, +1
-// binary - operator has two operands. 2+3, 3-2
+// -- Arithmetic operators --
+
+// Operators:
+// + -> addition of numbers or string concatenation
+console.log(1+2);                   // 3
+console.log("hello " + "world");    // hello world
+
+// - * / % ** -> subtraction, multiplication, division, remainder, exponentiation
+console.log(3-2);           // 1
+console.log("3" - "2");     // 1. Js converts "3" to number and "2" too and subtracts it.
+
+console.log(2*3);           // 6
+console.log(6/2);           // 3
+console.log(2**3);          // 8
+
+// -- ++ -> increment, decrement by 1
+
+// num++ or num-- -> returns original value
+let num = 5;
+console.log(num++);       // 5
+console.log(num);         // 6
+
+console.log(num--);       // 6
+console.log(num);         // 5
+// ++num or --num -> returns value after adding or subtracting 1
+num = 3;
+console.log(++num);       // 4
+console.log(--num);       // 3
 
 
 
-// -- Arithmetic Operators --
-// Addition             +
-// Substraction         -
-// Multiplication       *
-// Division             /   
-// Remainder            %
-// Exponentiation       **
+// -- Assignment operators --
 
-// incremet             ++
-// Increases a variable by 1
+// 1. Basic assingmnet:
+// operator =
+let fruit = "apple";
+// Assigns the value on the right to the variable on the left.
 
-let num1 = 1;
-num1++;
-console.log(num1);   // 2
-
-
-// decrement            --
-// decreases a variable by 1
-let num2 = 1;
-num2--;
-console.log(num2);  // 0
-
-// They can be placed before or after variable.
-// num++ or num-- are postfix form
-// ++num or --num are prefix form
-
-// postfix returns old value
-// prefix returns new value
-
-let num3 = 10;
-let num4 = num3++;
-console.log(num4);  // 10
-
-let num5 = 10;
-let num6 = ++num5;
-console.log(num6);  // 11
-
-// Unary "+" operator converts to number. If it is number it does nothing.
-console.log(+"");       // 0
-console.log(+true);     // 1
-console.log(+false);    // 0
-console.log(+"123");    // 123
+// 2. Arithmetic assignment:
+// Combines arithmetic operations with assignment.
+// operator      example     equivalent to
+// +=            num+=1      num=num+1
+// -=            num+=1      num=num-1
+// *=            num+=1      num=num*1
+// /=            num+=1      num=num/1
+// %=            num+=1      num=num%1
+// **=           num+=1      num=num**1
 
 
 
+// -- Comparison operators --
 
-// -- String operators --
+// Operators:
+// ==, !=       -> equal to, not equal to
+console.log(2 == 2);        // true
+console.log(2 == "2");      // true
+console.log(2 != 2);        // false
+console.log(2 != "2");      // false
 
-// + operator merges two strings together
-let txt1 = "Hello"
-let txt2 = " World"
-console.log(txt1 + txt2);   // Hello World
+// ===, !==     -> equal value and equal type, not equal value and not equal type
+console.log(2 === 2);        // true
+console.log(2 === "2");      // false
+console.log(2 !== 2);        // false
+console.log(2 !== "2");      // true
 
-// If there is one string and one number operand "+" converts number to string and merges it.
-let num = 10;
-console.log(txt1+10);   // Hello10
+// >, >=        -> greater than, greater than or equal
+console.log(5>6);           // false
+console.log(5>=5);          // true
 
-console.log(2+2+"hehe");    // 4hehe
-
-console.log("1"+2+2)        // 122
-
-
-// -- Assignment operator --
-
-// = is assignment operator. We can chain assignment operator.
-
-let a = b = c = 0;
-console.log(a, b, c);
-
-let n = 2;
-n = n + 2;
-console.log(n);
-
-// We can make this code shorter
-
-let n2 = 2;
-n2 += 2
-console.log(n2);
-
-
-let n3 = 3;
-n3 *= 3+5   // right part evaluated first, (3+5)*3=24
-console.log(n3);    // 24
+// <, <=        -> less than, less than or equal
+console.log(5<6);           // true
+console.log(5<=5);          // true
 
 
 
-// -- Comparisons operators --
+// -- Logical operators -- 
 
-// All comparisons operators will retrun boolean values.
+// operators:
 
-// Greater than a>b 
-// Greater than or equal a>=b
+// && (and) -> returns true if only both are true.
+console.log(true && false);      //  false
+console.log(false && false);     //  false
+console.log(false && true);      //  false
+console.log(true && true);       //  true
 
-// Less than a<b
-// Less than or equal a<=b
+// short circuit behavior
+// if first one is false, Js does not care about second one.
+function hi(msg){
+    console.log("HI "+msg);
+};
 
-// Comparsion of different types
-console.log("3" > 2);   // true. "3" becomes 3
-console.log("0001" == 1);   // true. "0001" becomes 1
-console.log(true == 1);     // true. true becomes 1
-console.log(false == 0);    // true. false becomes 0
+false && hi("false &&");      // hi will not be runned
+true && hi("true &&");       // hi will be runned
 
-// A regular equality has a poblem. It cannot differentiate 0 from false.
+
+//  || (or) -> returns true if only one of them is true.
+console.log(true || false);      //  true
+console.log(false || false);     //  false
+console.log(false || true);      //  true
+console.log(true || true);       //  true
+
+// short circuit behavior
+// if first one is true, Js does not care about second one.
+
+true || hi("true ||");         // hi will not be runned
+false || hi("false ||");       // hi will be runned
+
+//  ! (not) -> true is false, false it true.
+console.log(!true);     // false
+console.log(!false);    // true
+
+
+
+// -- Conditional(ternary) operators --
+
+// operator: condition ? valueIfTrue : valueIfFalse
+
+let age = 18;
+
+let status = age >= 18 ? "adult" : "minor"
+console.log(status);
+
+// Nested ternary
+
+let score = 72;
+
+let grade = 
+    score >= 90 ? "A" :
+    score >= 80 ? "B" :
+    score >= 70 ? "C" :
+    "F"
+
+console.log(grade);
+
+
+// -- Spread operators --
+// -- Optional chaining operators --
+// -- Nullish coalescing operators --
