@@ -82,7 +82,7 @@ switch(day){
 
 // Using expressions in switch.
 
-switch(score){
+switch(true){
     case score >= 90:
         console.log("Great");
         break;
