@@ -80,7 +80,7 @@ for(;e<5;){     // we removed step
 // breaking the loop
 
 // Loop ends when its condition becomes false.
-// But we can end it maually with break
+// But we can end it manually with break
 
 // let sum = 0;
 // while(true){
@@ -103,37 +103,32 @@ for (let i = 0; i < 10; i++) {
 
 // Sometimes we need to break out from multiple nested loops at once.
 
-// for (let i = 0; i < 3; i++) {
-
-//   for (let j = 0; j < 3; j++) {
-
-//     let input = prompt(`Value at coords (${i},${j})`, '');
-
-//     // what if we want to exit from here to Done (below)?
-//   }
-// }
-
-// alert('Done!');
-
-// A label is an identifier with a colon before a loop:
-
-// labelName: for (...) {
-//   ...
-// }
-
-// break <labelName>
-
-outer: for (let i2 = 0; i2 < 3; i2++) {
-
-  for (let j2 = 0; j2 < 3; j2++) {
-
-    let input = prompt(`Value at coords (${i2},${j2})`, '');
-
-    // if an empty string or canceled, then break out of both loops
-    if (!input) break outer; // (*)
-
-    // do something with the value...
-  }
+outerLoop: // this is the label
+for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        console.log(`i=${i}, j=${j}`);
+        if (i === 1 && j === 1) {
+          break outerLoop; // breaks BOTH loops
+        }
+    }
 }
 
-console.log('Done!');
+
+// for of (arrays, strings)
+
+let fruits = ["apple", "banana", "orange"];
+
+for (let fruit of fruits){
+  console.log(fruit);
+}
+
+// for in (objects)
+
+let user = {
+  name:"Husniddin",
+  age:18
+};
+
+for(let key in user){
+  console.log(key);
+}
