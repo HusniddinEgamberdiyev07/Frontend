@@ -17,10 +17,20 @@
 let num;
 num = 1;
 console.log("number:", num); 
-console.log(1/0); // infinity
-console.log("a"/2); // NaN
-console.log(NaN ** 0); // 1
-console.log(3 + NaN); // NaN
+console.log(1/0);               // infinity
+console.log("a"/2);             // NaN
+console.log(NaN ** 0);          // 1
+console.log(3 + NaN);           // NaN
+
+// -- More ways to write number --
+
+let number = 1_000_000_000; // let number = 1000000000
+let billion = 1e9; // let billion = 1000000000 -> 1 with 9 zeroes
+let microsecond = 1e-6; // let microsecond = 0.000001 -> 1 and five zeroes
+
+console.log(number);
+console.log(billion);
+console.log(microsecond);
 
 // bigint
 let bigInt;
@@ -49,11 +59,11 @@ console.log(surname);
 // String conversion
 
 let value = true;
-value = String(value); // changes true to "true"
+value = String(value);          // changes true to "true"
 console.log(typeof value);
 
 let num2 = 123;
-num2 = String(num2); // changes 123 to "123"
+num2 = String(num2);            // changes 123 to "123"
 console.log(typeof num2);
 
 // Number conversion
@@ -69,23 +79,26 @@ let str = "123";
 str = Number(str); // changes "123" to 123
 console.log(typeof str);
 
-console.log(Number(undefined)); // NaN
-console.log(Number(null)); // 0
-console.log(Number(true)); // 1
-console.log(Number(false)); // 0
-console.log(Number("    ")); // 0
-console.log(Number("text")); // NaN
+console.log(Number(null));          // 0
+console.log(Number([]))             // 0
+console.log(Number(false));         // 0
+console.log(Number(" "));           // 0
+console.log(Number(true));          // 1
+console.log(Number("text"));        // NaN
+console.log(Number(undefined));     // NaN
 
 // Boolean conversion
 
-console.log(Boolean(1)) // true
-console.log(Boolean(12)) // true
-console.log(Boolean("text")) // true
+// Falsy values: null, undefined, NaN, 0, -0, "", false
 
-console.log(Boolean(0)) // false
-console.log(Boolean("")) // false
-console.log(Boolean(null)); // false
-console.log(Boolean(undefined)) // false
+console.log(Boolean(1))             // true
+console.log(Boolean(12))            // true
+console.log(Boolean("text"))        // true
+
+console.log(Boolean(0))             // false
+console.log(Boolean(""))            // false
+console.log(Boolean(null));         // false
+console.log(Boolean(undefined))     // false
 
 
 // -- How primitive data type methods work --
@@ -106,18 +119,6 @@ console.log(text.toUpperCase());
 // 4) returns a new primitive value -> "HELLO"
 
 // 5) destroys the temporary object (the primitive itself remains unchanged)
-
-
-// -- More ways to write number --
-
-// using underscore 
-let number = 1_000_000_000; // let number = 1000000000
-let billion = 1e9; // let billion = 1000000000 -> 1 with 9 zeroes
-let microsecond = 1e-6; // let microsecond = 0.000001 -> 1 and five zeroes
-
-console.log(number);
-console.log(billion);
-console.log(microsecond);
 
 
 // -- Methods of regular numbers --
@@ -154,6 +155,12 @@ console.log(Math.round(3.1));
 console.log(Math.round(3.5));
 console.log(Math.round(-3.5));
 
+// Trunc
+// Removes decimal part
+
+console.log(Math.trunc(3.15));      // 3
+
+
 // toFixed(decimalPlace)
 let sum = 0.1 + 0.2;
 console.log(sum); // 0.30000000000000004
@@ -161,19 +168,25 @@ console.log(sum == 0.3); // our eyes tell us that this is true but it is false b
 console.log((0.1 + 0.2).toFixed(1)); // we tell show with only one decimal place with toFixed -> 0.3
 console.log((0.1 + 0.2).toFixed(1) == 0.3); // true -> 0.3 == 0.3
 
-// IsNaN & IsFinite
+// IsNaN & IsFinite & isInteger
 
 // IsNaN check is it NaN or not
 
-console.log(isNaN("text")); // true
-console.log(isNaN(NaN)); // true
+console.log(Number.isNaN("text")); // false
+console.log(Number.isNaN(NaN)); // true
 
 // IsFinite returns true if it is not NaN / Infinity / -Infinity
 
-console.log(isFinite(NaN)); // false
-console.log(isFinite("Text")); // false
-console.log(isFinite(Infinity)) // false
-console.log(isFinite("123")) // true
+console.log(Number.isFinite(NaN)); // false
+console.log(Number.isFinite("Text")); // false
+console.log(Number.isFinite(Infinity)) // false
+console.log(Number.isFinite("123")) // false
+
+// isInteger checks if number is integer.
+
+console.log(Number.isInteger("text"));
+console.log(Number.isInteger(12.2));
+console.log(Number.isInteger(12));
 
 // parseInt(string)
 // In real life we have units like 100px or currencies like 10$. We want to get only numbers. parseInt does that
