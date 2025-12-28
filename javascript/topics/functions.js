@@ -16,13 +16,13 @@ function sayHi(){
 
 sayHi();
 sayHi();
-// We can the function as much as we want to.
-// Main purpose of function is to avoid code duplication
+// We can call the function as much as we want to.
+// Main purpose of function is to avoid code duplication.
 // If we want to change hello to bye. We don't need to change everything. If we change sayHi function everything will change.
 
 
 // function can access an outer variable as well
-// function has full access to the outer variable ikt can modify it too
+// function has full access to the outer variable it can modify it too
 
 let userName = "Husniddin"
 
