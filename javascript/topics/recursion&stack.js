@@ -39,3 +39,12 @@ console.log(pow3(4, 2));
 // Recursion depth is limited by Js engine. It should be 10000.
 
 
+// pow(3, 2)
+
+// pow(1, 2) -> x=1, x=2, line=1
+// pow(2, 2) -> x=2, x=2, line=4
+// pow(3, 2) -> x=3, x=2, line=4
+
+// n=2 -> pow(1, 2);
+// pow(2, 2); line 4 -> n * pow(1, 2) -> n * 2
+// pow(3, 2); line 4 -> n * pow(2, 2) -> n * n * 2
