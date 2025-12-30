@@ -160,3 +160,65 @@ console.log([]+"1");                // "1"
 console.log([1]+"1");               // "11"
 console.log([1, 2]+"1");            // "1,21"
 console.log([1, 2, 3]+"1");         // "1,2,31"
+
+
+
+// -- Array methods --
+
+
+// Add / remove items:
+
+// 1) pop.
+// 2) push.
+// 3) shift.
+// 4) unshift.
+
+// 5) splice -> this method can add, remove or replace element. You can use positive and negative indexes
+
+// remove elements:
+
+let test_array = [1, 2, 3, 4, 5];
+
+test_array.splice(1, 3);         // from 1 remove 3 elements. [1,5]
+console.log(test_array);
+
+// replace elements:
+
+let test_array2 = [1, 2, 3, 4, 5];
+
+test_array2.splice(1, 3, 10, 20, 30);       // from 1 remove 3 elements and put 10, 20, 30 in their position.
+console.log(test_array2);                   // [1, 10, 20, 30, 5]
+
+
+// add elements:
+
+let test_array3 = [1, 2, 3];
+
+test_array3.splice(3, 0, "apple", "banana");        // from 3 remove 0 element and add "apple", "banana"
+console.log(test_array3);
+
+// 6) slice -> copy elements from start to end and return new array. You can use positive and negative indexes
+
+// .slice(start, end);
+
+let test_array4 = [1, 2, 3, 4, 5];
+
+let sub_test_array = test_array4.slice(1, 5);
+console.log(sub_test_array);
+
+// 7) Concat -> returns new array which includes elements from pther arrays and additional items.
+
+// If the argument is array it is elements will be added individually.
+console.log(test_array4.concat(["hello", "there"], {"name":"Husniddin", age : 18}));
+
+
+// Iterate. For each.
+
+let test_array5 = [1, 2, 3, 4, 5, 6];
+
+test_array5.forEach(function(item, index, array){
+    console.log(`Item: ${item} at ${index} in array ${array}`);
+});
+
+test_array5.forEach(item=>console.log(item));
+test_array5.forEach((item, index)=>console.log(item, index));
