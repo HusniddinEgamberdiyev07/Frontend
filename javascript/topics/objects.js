@@ -183,8 +183,8 @@ new_user.name = "John";     // this won't effect user6 cause new_user is indepen
 console.log(user6);
 console.log(new_user);
 
-// We can also use the method Object.assign(dest, ...sources).
-// dest is a target object.
+// We can also use the method Object.assign(rest, ...sources).
+// rest is a target object.
 // further arguments are objects which are adding to a target
 
 let new_user2 = {};
