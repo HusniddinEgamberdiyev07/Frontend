@@ -106,7 +106,7 @@ for(let key in user3){
 // Objects are stored and copied by same refrence.
 // Primitive values are copied as whole value.
 
-// Primitive values. We put copy of nessage into phrase
+// Primitive values. We put copy of message into phrase
 
 let message = "hello";
 let phrase = message;
