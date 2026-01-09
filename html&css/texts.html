@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Texts in HTML!</title>
+    </head>
+
+    <body>
+        <!-- HTML headings -->
+
+        <h1>This is the main heading.</h1>
+        <h2>This is subheading.</h2>
+        <h3>This is a smaller subheading.</h3>
+        <h4>This is sub-subheading.</h4>
+        <h5>This is minor subheading.</h5>
+        <h6>This is the smallest heading.</h6>
+
+        <!-- 
+            h1 -> Represents the primary focus of the main page, 
+            usually used for the main title.
+            Use only one h1.
+        -->
+
+        <!-- 
+            h2 -> Ideal for dividing major sections.
+        -->
+
+        <!-- 
+            h3 -> Is used subsections under h2, while h4 and h6 are used for additional,
+            less important subdivisions
+            h6 -> least important headings
+        -->
+
+        <!-- 
+            h1
+            ├── h2
+            │    ├── h3
+            │    ├── h3
+            │    └── h3
+            ├── h2
+            │    ├── h3
+            │    └── h3
+            └── h2 
+        -->
+
+
+
+
+        <!-- HTML paragraphs -->
+
+        <!-- <p>Content...</p> -->
+
+        <!-- 
+            Browser reduces multiple spaces added by user to a single space.
+            Lines is the same.
+        -->
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        
+            
+            Laboriosam dicta, explicabo, nesciunt, non harum aperiam dolores modi id porro expedita ea similique blanditiis. 
+        
+        Sint eum, dolorem unde facilis temporibus suscipit.</p>
+
+        <!-- 
+            We can use <br> (break line, new line) <hr> (horizontal line, draws line) with texts.
+        -->
+
+        <p>Hello <br> World </p>
+        <hr>
+        <p>Bye World</p>
+
+        <!-- 
+            align: it has 3 values. 
+            center -> centers text.
+            right -> all text will be on right side.
+            left -> all text will be on left side
+        -->
+        <p align="left">Left</p>
+        <p align="center">Center</p>
+        <p align="right">Right</p>
+        
+        <!-- 
+            <p>
+                <p>This is wrong</p>
+                You cannot nest p into another p.
+            </p>
+
+            Use p for only texts.
+        -->
+
+
+
+        <!-- HTML links Hyperlinks -->
+
+        <!-- 
+            Links helps us to navigate one page to another or
+            one section to another section in the same page.
+        -->
+
+        <!-- 
+            a -> anchor tag
+            <a href="" target="">Content...</a>
+
+            href->destination URL.
+            target->where to open.
+        -->
+
+        <!-- 
+            target values:
+            
+            1. _blank               -> new window tab
+            2. _self (default)      -> same place
+            3. _parent              -> opens it to parent frame
+            4. _top                 -> full body of the window
+        -->
+
+        <a href="https://www.youtube.com/">Youtube self</a>
+        <a href="https://www.youtube.com/" target="_blank">Youtube blank</a>
+        <a href="https://www.youtube.com/" target="_parent">Youtube parent</a>
+        <a href="https://www.youtube.com/" target="_top">Youtube top</a>
+
+        <!-- link to the image -->
+        <a href="./src/images/Screenshot from 2025-12-21 12-33-06.png">
+            <img width="500px" src="./src/images/Screenshot from 2025-12-21 12-33-06.png" alt="Screenshot">
+        </a>
+
+        <!-- Link to the email -->
+
+        <a href="mailto:husniddin200708@gmail.com">My email</a>
+        
+        <!-- Link to phone number -->
+
+        <a href="tel:+998887100742">Tel me</a>
+
+        <!-- Link to download file -->
+
+        <a href="./src/images/Screenshot from 2025-12-21 12-33-06.png" download>Download me</a>
+    </body>
+</html>
