@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML forms!</title>
+    <script>
+        function getFormData() {
+            const form = document.getElementById("registerForm");
+            const formData = new FormData(form);
+
+            const username = formData.get("username");
+            const gender = formData.get("gender");
+            const food = formData.getAll("foods");
+            const msg = formData.get("msg");
+            const city = formData.get("city");
+
+            console.log(username, gender, food, msg, city);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Buttons -->
+    <!-- <button disabled>Disabled button</button>
+    <button type="button">Normal button</button>
+    <button type="reset">Resets all form fields</button>
+    <button type="submit">Submits a form</button> -->
+
+    <!-- Forms -->
+
+    <!-- form tag is a container for all form fields. -->
+
+    <!-- input types -->
+
+    <!-- <form>
+        <input type="text">
+        <input type="checkbox">
+        <input type="color">
+        <input type="date">
+        <input type="datetime">
+        <input type="datetime-local">
+        <input type="email">
+        <input type="file">
+        <input type="image">
+        <input type="number">
+        <input type="password">
+        <input type="radio">
+        <input type="range">
+        <input type="button">
+        <input type="reset">
+        <input type="submit">
+    </form> -->
+
+    <!-- input restrictions -->
+
+    <!-- 
+        disabled,
+        checked->preselected,
+        max-> max value,
+        min-> min-value,
+        maxlength-> max characters for an input field,
+        readonly,
+        required,
+        size-> visible width of an input field,
+        value-> default value,
+        step->number intervals (step=1 only whole numbers),
+        pattern,
+        placeholder->short hint,
+        multiple-> more than one choice,
+        autofocus-> the field will be focused when page loads
+        autocomplete-> on/off
+    -->
+
+    <form id="registerForm" autocomplete="on">
+        <fieldset>
+            <legend>Your info</legend>
+            
+            <label>
+                <input type="text" name="username" id="username"> 
+                User name
+            </label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Food</legend>
+            <label for="foods">Choose your food</label>
+            <select name="foods" id="foods" multiple size="1" autofocus>
+                <option value="hotdog">Hotdog</option>
+                <option value="shaurma" selected>Shaurma</option>
+                <option value="Lavash">Lavash</option>
+            </select><br>
+            <input list="city" name="city">
+            <datalist id="city">
+                <option value="Samarkand"></option>
+                <option value="Tashkent"></option>
+            </datalist>
+            <textarea name="msg" id="msg" cols="15" rows="10">Your thoughts</textarea>
+        </fieldset>
+
+        <input type="button" onclick="getFormData()" value="submit">
+    </form>
+</body>
+
+</html>
